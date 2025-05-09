@@ -31,12 +31,36 @@ nav a {
   text-decoration: none;
   color: #444;
   font-size: 16px;
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+nav a:hover {
+  transform: scale(1.1);
+}
+
+nav a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #e91e63;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+nav a:hover::after {
+  opacity: 1;
 }
 
 .hero {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 40px;
   padding: 60px 40px;
   min-height: 90vh;
 }
@@ -44,6 +68,10 @@ nav a {
 .intro h2 {
   font-size: 32px;
   color: #00c853;
+  margin-bottom: 10px;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: slideIn 0.6s ease-out forwards;
 }
 
 .intro h1 {
@@ -53,12 +81,28 @@ nav a {
 
 .highlight {
   color: #e91e63;
+  border-right: 2px solid #e91e63;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2.5s steps(30, end), blink 0.75s step-end infinite;
+  display: inline-block;
 }
 
-#typewriter {
-  margin-top: 20px;
-  font-size: 22px;
-  color: #5c6bc0;
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: #e91e63; }
 }
 
 .image img {
