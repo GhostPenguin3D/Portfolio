@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-image: url("bg_tw-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #222;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  background: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+}
+
+.logo {
+  font-size: 24px;
+  color: #e91e63;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+  min-height: 90vh;
+}
+
+.intro h2 {
+  font-size: 32px;
+  color: #00c853;
+}
+
+.intro h1 {
+  font-size: 40px;
+  margin-top: 10px;
+}
+
+.highlight {
+  color: #e91e63;
+}
+
+#typewriter {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #5c6bc0;
+}
+
+.image img {
+  max-width: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
