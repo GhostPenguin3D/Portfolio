@@ -1,10 +1,23 @@
-const text = "I'm Student from Ratanarat Bamrung School.";
-let i = 0;
-function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("typewriter").innerHTML += text.charAt(i);
+function animateText(elementId, text, delay = 50, callback = null) {
+  const el = document.getElementById(elementId);
+  let i = 0;
+  const interval = setInterval(() => {
+    el.innerHTML += text.charAt(i);
+    el.style.opacity = 1;
     i++;
-    setTimeout(typeWriter, 50);
-  }
+    if (i >= text.length) {
+      clearInterval(interval);
+      if (callback) callback();
+    }
+  }, delay);
 }
-window.onload = typeWriter;
+
+window.onload = () => {
+  animateText("helloText", "HELLO EVERYONE 👋", 40, () => {
+    animateText("nameText", "I'M NATCHAPHON JAIRUEN", 30, () => {
+      animateText("studentText", "Student", 25, () => {
+        animateText("welcomeText", "Welcome to My personal website", 20);
+      });
+    });
+  });
+};
