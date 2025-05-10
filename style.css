@@ -82,22 +82,21 @@ nav a:hover::after {
 .highlight {
   color: #e91e63;
   border-right: 2px solid #e91e63;
-  white-space: nowrap;
+  white-space: nowrap;  /* ป้องกันการตัดบรรทัด */
   overflow: hidden;
-  animation: typing 2.5s steps(30, end), blink 0.75s step-end infinite;
   display: inline-block;
+  font-size: inherit;
+  animation: blink 1s step-end infinite;
+  line-height: 1.2; /* ทำให้ข้อความอยู่กลางบรรทัด */
+  vertical-align: middle; /* ให้ตัวอักษรอยู่กลางแนวตั้ง */
 }
+
 
 @keyframes slideIn {
   to {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
 }
 
 @keyframes blink {
@@ -109,4 +108,65 @@ nav a:hover::after {
   max-width: 400px;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .intro h1 {
+    font-size: 28px;
+  }
+
+  .intro h2 {
+    font-size: 22px;
+  }
+
+  .image img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  nav a {
+    font-size: 14px;
+    margin: 0 10px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .highlight {
+    font-size: 20px;
+    max-width: 20ch;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: 24px;
+  }
+
+  .intro h2 {
+    font-size: 18px;
+  }
+
+  .highlight {
+    font-size: 18px;
+    max-width: 18ch;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
 }

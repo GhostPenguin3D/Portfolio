@@ -1,10 +1,13 @@
-const text = "I'm Student from Ratanarat Bamrung School.";
-let i = 0;
-function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("typewriter").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typeWriter, 50);
+const text = "NATCHAPHON JAIRUEN";
+const target = document.getElementById("typewriter");
+let index = 0;
+
+function typeLetter() {
+  if (index < text.length) {
+    target.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeLetter, 25); // เร่งความเร็วพิมพ์
   }
 }
-window.onload = typeWriter;
+
+window.addEventListener("DOMContentLoaded", typeLetter);
