@@ -1,16 +1,10 @@
-window.onload = () => {
-
-  document.getElementById("helloText").innerHTML = "HELLO EVERYONE 👋";
-  document.getElementById("studentText").innerHTML = "Student";
-  document.getElementById("welcomeText").innerHTML = "Welcome to My personal website";
-
-  const text = "I'M NATCHAPHON JAIRUEN";
-  const el = document.getElementById("nameText");
-  let i = 0;
-  const interval = setInterval(() => {
-    el.innerHTML += text.charAt(i);
-    el.style.opacity = 1;
+const text = "I'm Student from Ratanarat Bamrung School.";
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typewriter").innerHTML += text.charAt(i);
     i++;
-    if (i >= text.length) clearInterval(interval);
-  }, 40);
-};
+    setTimeout(typeWriter, 50);
+  }
+}
+window.onload = typeWriter;
