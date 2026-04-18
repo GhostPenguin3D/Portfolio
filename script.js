@@ -6,7 +6,7 @@ function typeLetter() {
   if (index < text.length) {
     target.textContent += text.charAt(index);
     index++;
-    setTimeout(typeLetter, 25); // เร่งความเร็วพิมพ์
+    setTimeout(typeLetter, 8); // เร่งความเร็วพิมพ์
   }
 }
 
