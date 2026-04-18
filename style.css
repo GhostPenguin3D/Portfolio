@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background-image: url("bg_tw-1.png");
+  background-image: url("Pic/bg_tw-1.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -82,15 +82,14 @@ nav a:hover::after {
 .highlight {
   color: #e91e63;
   border-right: 2px solid #e91e63;
-  white-space: nowrap;  /* ป้องกันการตัดบรรทัด */
+  white-space: nowrap;
   overflow: hidden;
   display: inline-block;
   font-size: inherit;
   animation: blink 1s step-end infinite;
-  line-height: 1.2; /* ทำให้ข้อความอยู่กลางบรรทัด */
-  vertical-align: middle; /* ให้ตัวอักษรอยู่กลางแนวตั้ง */
+  line-height: 1.2;
+  vertical-align: middle;
 }
-
 
 @keyframes slideIn {
   to {
@@ -106,6 +105,8 @@ nav a:hover::after {
 
 .image img {
   max-width: 400px;
+  width: 100%;
+  aspect-ratio: 1/1;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
